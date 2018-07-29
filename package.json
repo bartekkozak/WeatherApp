@@ -2,7 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://bartekkozak.github.io/WeatherApp",
+  "homepage": "https://bartekkozak.github.io/WeatherApp",
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
