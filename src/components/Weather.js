@@ -38,8 +38,8 @@ class Weather extends Component {
   async getWeather(e) {
     e.preventDefault();
     const API_KEY = "27080fc92eb4dc297551bf93f67ab610";
-    const city = e.target.city.value;
-    const country = e.target.country.value;
+    const city = e.target.city.value.trim();
+    const country = e.target.country.value.trim();
     const api_call = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`
     );
@@ -142,7 +142,7 @@ class Weather extends Component {
               </div>
               <div className="weather-icon-container">
                 {main === "Clear" && <Sunny />}
-                {main === "Clouds" && <Cloudy />}
+                {(main === "Clouds" || main === "Mist") && <Cloudy />}
                 {main === "Drizzle" && <SunShower />}
                 {(main === "Rain" || main === "light rain") && <Rainy />}
                 {main === "Thunderstorm" && <ThunderStorm />}
